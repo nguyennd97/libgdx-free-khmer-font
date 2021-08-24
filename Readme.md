@@ -10,5 +10,5 @@ Using Khmer Wrapper to solve [libgdx Khmer font issue](https://github.com/libgdx
 Here is an example code:
 
         BitmapFont font = new BitmapFont(Gdx.files.internal("khmerOsBattamang-64-full.fnt"));
-        font.draw(batch, KhmerWrapper.wrap("ឥឦឧឨឩឪឫឬឭឮឯឰឱឲឳ", 50, 430);
+        font.draw(batch, KhmerWrapper.wrap("ឥឦឧឨឩឪឫឬឭឮឯឰឱឲឳ"), 50, 430);
 
