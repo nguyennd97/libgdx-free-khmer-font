@@ -2,7 +2,7 @@ package com.mygdx.game;
 
 import java.util.HashMap;
 
-public class KhmerFilter {
+public class KhmerWrapper {
 
     // foot
     private final static HashMap<String, Character> blwSC1;
@@ -107,7 +107,7 @@ public class KhmerFilter {
         blwV.put('\u17c0', '\u0fef');
     }
 
-    public static String filter(String khmerText) {
+    public static String wrap(String khmerText) {
         char[] chars = khmerText.toCharArray();
         StringBuilder encodedText = new StringBuilder();
         StringBuilder word = new StringBuilder();
