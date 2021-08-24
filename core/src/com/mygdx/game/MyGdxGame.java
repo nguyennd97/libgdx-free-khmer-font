@@ -28,115 +28,115 @@ public class MyGdxGame extends ApplicationAdapter {
     String testDependentVowel = filter("កា កិ កី កឹ កឺ កុ កូ កួ \n" +
             "កើ កឿ កៀ កេ កែ កៃ កោ កៅ");
     String testFootVowel = filter("ក្កុ ក្កូ ក្កួ");
-    String testSpecialDependentVowel = filter("ញុ ញូ ញួ ឡុ ឡូ ឡួ\n" +
+    String testSpecialDependentVowel = filter(filter("ញុ ញូ ញួ ឡុ ឡូ ឡួ\n" +
             "ញ្ក ញ្ខ ញ្គ ញ្ឃ ញ្ង ញ្ច ញ្ឆ ញ្ជ ញ្ឈ ញ្ញ ញ្ដ \n" +
             "ញ្ឋ ញ្ឌ ញ្ឍ  ញ្ណ \n" +
             "ញ្ត ញ្ថ ញ្ទ ញ្ធ ញ្ន ញ្ប ញ្ផ ញ្ព ញ្ភ ញ្ម ញ្យ \n" +
-            "ញ្រ ញ្ល ញ្វ ញ្ឝ ញ្ឞ ញ្ស ញ្ហ ញ្អ");
+            "ញ្រ ញ្ល ញ្វ ញ្ឝ ញ្ឞ ញ្ស ញ្ហ ញ្អ"));
     String testLongCharacters = filter("ក្ក្ឃ ក្ក្ឈ ក្ក្ឍ ក្ក្ប ក្ក្ប ក្ក្យ ក្ក្រ ក្ក្ឞ ក្ក្ស ក្កឿ ក្កៀ");
     String testDiacritic = filter("កំ កះ កៈ ក៉ ក៊ កុ ក់ ក៌ ក៍ ក៎ ក៏ ក័ ក៑ ក៓");
 
     // foot
-    private final static HashMap<String, Character> khmerFoot;
+    private final static HashMap<String, Character> blwSC1;
     static {
-        khmerFoot = new HashMap<>();
-        khmerFoot.put("្ឍ", '\u1388');
-        khmerFoot.put("្ស", '\u1389');
-        khmerFoot.put("្ឃ", '\u138a');
-        khmerFoot.put("្ឈ", '\u138b');
-        khmerFoot.put("្ប", '\u138c');
+        blwSC1 = new HashMap<>();
+        blwSC1.put("្ឍ", '\u1388');
+        blwSC1.put("្ស", '\u1389');
+        blwSC1.put("្ឃ", '\u138a');
+        blwSC1.put("្ឈ", '\u138b');
+        blwSC1.put("្ប", '\u138c');
 
-        khmerFoot.put("្យ", '\u138d');
-        khmerFoot.put("្ឞ", '\u138e');
-        khmerFoot.put("្រ", '\u138f');
-        khmerFoot.put("្ន", '\u1390');
-        khmerFoot.put("្វ", '\u1391');
+        blwSC1.put("្យ", '\u138d');
+        blwSC1.put("្ឞ", '\u138e');
+        blwSC1.put("្រ", '\u138f');
+        blwSC1.put("្ន", '\u1390');
+        blwSC1.put("្វ", '\u1391');
 
-        khmerFoot.put("្ខ", '\u1392');
-        khmerFoot.put("្ង", '\u1393');
-        khmerFoot.put("្ច", '\u1394');
-        khmerFoot.put("្ឋ", '\u1395');
-        khmerFoot.put("្ឌ", '\u1396');
+        blwSC1.put("្ខ", '\u1392');
+        blwSC1.put("្ង", '\u1393');
+        blwSC1.put("្ច", '\u1394');
+        blwSC1.put("្ឋ", '\u1395');
+        blwSC1.put("្ឌ", '\u1396');
 
-        khmerFoot.put("្ទ", '\u1397');
-        khmerFoot.put("្ធ", '\u1398');
-        khmerFoot.put("្គ", '\u1399');
-        khmerFoot.put("្ម", '\u139a');
-        khmerFoot.put("្ល", '\u139b');
+        blwSC1.put("្ទ", '\u1397');
+        blwSC1.put("្ធ", '\u1398');
+        blwSC1.put("្គ", '\u1399');
+        blwSC1.put("្ម", '\u139a');
+        blwSC1.put("្ល", '\u139b');
 
-        khmerFoot.put("្ក", '\u139c');
-        khmerFoot.put("្ឆ", '\u139d');
-        khmerFoot.put("្ជ", '\u139e');
-        khmerFoot.put("្ត", '\u139f');
-        khmerFoot.put("្ណ", '\u13a0');
+        blwSC1.put("្ក", '\u139c');
+        blwSC1.put("្ឆ", '\u139d');
+        blwSC1.put("្ជ", '\u139e');
+        blwSC1.put("្ត", '\u139f');
+        blwSC1.put("្ណ", '\u13a0');
 
-        khmerFoot.put("្ដ", '\u13a1');
-        khmerFoot.put("្ថ", '\u13a2');
-        khmerFoot.put("្ផ", '\u13a3');
-        khmerFoot.put("្ព", '\u13a4');
-        khmerFoot.put("្ភ", '\u13a5');
+        blwSC1.put("្ដ", '\u13a1');
+        blwSC1.put("្ថ", '\u13a2');
+        blwSC1.put("្ផ", '\u13a3');
+        blwSC1.put("្ព", '\u13a4');
+        blwSC1.put("្ភ", '\u13a5');
 
-        khmerFoot.put("្ឝ", '\u13a6');
-        khmerFoot.put("្ហ", '\u13a7');
-        khmerFoot.put("្អ", '\u13a8');
-        khmerFoot.put("្ញ", '\u13a9');
+        blwSC1.put("្ឝ", '\u13a6');
+        blwSC1.put("្ហ", '\u13a7');
+        blwSC1.put("្អ", '\u13a8');
+        blwSC1.put("្ញ", '\u13a9');
     }
 
     // foot before other foot
-    private final static HashMap<String, Character> khmerFeet;
+    private final static HashMap<String, Character> blwSC2;
     static {
-        khmerFeet = new HashMap<>();
-        khmerFeet.put("្ឍ", '\u1288');
-        khmerFeet.put("្ស", '\u1289');
-        khmerFeet.put("្ឃ", '\u128a');
-        khmerFeet.put("្ឈ", '\u128b');
-        khmerFeet.put("្ប", '\u128c');
+        blwSC2 = new HashMap<>();
+        blwSC2.put("្ឍ", '\u1288');
+        blwSC2.put("្ស", '\u1289');
+        blwSC2.put("្ឃ", '\u128a');
+        blwSC2.put("្ឈ", '\u128b');
+        blwSC2.put("្ប", '\u128c');
 
-        khmerFeet.put("្យ", '\u128d');
-        khmerFeet.put("្ឞ", '\u128e');
-        khmerFeet.put("្រ", '\u128f');
-        khmerFeet.put("្ន", '\u1290');
-        khmerFeet.put("្វ", '\u1291');
+        blwSC2.put("្យ", '\u128d');
+        blwSC2.put("្ឞ", '\u128e');
+        blwSC2.put("្រ", '\u128f');
+        blwSC2.put("្ន", '\u1290');
+        blwSC2.put("្វ", '\u1291');
 
-        khmerFeet.put("្ខ", '\u1292');
-        khmerFeet.put("្ង", '\u1293');
-        khmerFeet.put("្ច", '\u1294');
-        khmerFeet.put("្ឋ", '\u1295');
-        khmerFeet.put("្ឌ", '\u1296');
+        blwSC2.put("្ខ", '\u1292');
+        blwSC2.put("្ង", '\u1293');
+        blwSC2.put("្ច", '\u1294');
+        blwSC2.put("្ឋ", '\u1295');
+        blwSC2.put("្ឌ", '\u1296');
 
-        khmerFeet.put("្ទ", '\u1297');
-        khmerFeet.put("្ធ", '\u1298');
-        khmerFeet.put("្គ", '\u1299');
-        khmerFeet.put("្ម", '\u129a');
-        khmerFeet.put("្ល", '\u129b');
+        blwSC2.put("្ទ", '\u1297');
+        blwSC2.put("្ធ", '\u1298');
+        blwSC2.put("្គ", '\u1299');
+        blwSC2.put("្ម", '\u129a');
+        blwSC2.put("្ល", '\u129b');
 
-        khmerFeet.put("្ក", '\u129c');
-        khmerFeet.put("្ឆ", '\u129d');
-        khmerFeet.put("្ជ", '\u129e');
-        khmerFeet.put("្ត", '\u129f');
-        khmerFeet.put("្ណ", '\u12a0');
+        blwSC2.put("្ក", '\u129c');
+        blwSC2.put("្ឆ", '\u129d');
+        blwSC2.put("្ជ", '\u129e');
+        blwSC2.put("្ត", '\u129f');
+        blwSC2.put("្ណ", '\u12a0');
 
-        khmerFeet.put("្ដ", '\u12a1');
-        khmerFeet.put("្ថ", '\u12a2');
-        khmerFeet.put("្ផ", '\u12a3');
-        khmerFeet.put("្ព", '\u12a4');
-        khmerFeet.put("្ភ", '\u12a5');
+        blwSC2.put("្ដ", '\u12a1');
+        blwSC2.put("្ថ", '\u12a2');
+        blwSC2.put("្ផ", '\u12a3');
+        blwSC2.put("្ព", '\u12a4');
+        blwSC2.put("្ភ", '\u12a5');
 
-        khmerFeet.put("្ឝ", '\u12a6');
-        khmerFeet.put("្ហ", '\u12a7');
-        khmerFeet.put("្អ", '\u12a8');
-        khmerFeet.put("្ញ", '\u12a9');
+        blwSC2.put("្ឝ", '\u12a6');
+        blwSC2.put("្ហ", '\u12a7');
+        blwSC2.put("្អ", '\u12a8');
+        blwSC2.put("្ញ", '\u12a9');
     }
 
     // character changes if word has foot
-    private final static HashMap<Character, Character> specialCharacter;
+    private final static HashMap<Character, Character> blwV;
     static {
-        specialCharacter = new HashMap<>();
-        specialCharacter.put('\u17bb', '\u0feb');
-        specialCharacter.put('\u17bc', '\u0fec');
-        specialCharacter.put('\u17bd', '\u0fed');
-        specialCharacter.put('\u17bf', '\u0fee');
-        specialCharacter.put('\u17c0', '\u0fef');
+        blwV = new HashMap<>();
+        blwV.put('\u17bb', '\u0feb');
+        blwV.put('\u17bc', '\u0fec');
+        blwV.put('\u17bd', '\u0fed');
+        blwV.put('\u17bf', '\u0fee');
+        blwV.put('\u17c0', '\u0fef');
     }
 
     @Override
@@ -151,7 +151,7 @@ public class MyGdxGame extends ApplicationAdapter {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
-        font.draw(batch, testDependentVowel, 50, 430);
+        font.draw(batch, testSpecialDependentVowel, 50, 430);
 //        font.draw(batch, testFoot, 50, 430);
         batch.end();
     }
@@ -185,11 +185,11 @@ public class MyGdxGame extends ApplicationAdapter {
                             } else {
                                 // first foot
                                 foot = chars[i] + "" + chars[i + 1];
-                                if (khmerFoot.containsKey(foot)) {
+                                if (blwSC1.containsKey(foot)) {
                                     if (chars[i + 1] == '\u179a') {
-                                        word.insert(word.length() - 1, khmerFoot.get(foot));
+                                        word.insert(word.length() - 1, blwSC1.get(foot));
                                     } else {
-                                        word.append(khmerFoot.get(foot));
+                                        word.append(blwSC1.get(foot));
                                     }
                                     i++;
                                 }
@@ -200,19 +200,19 @@ public class MyGdxGame extends ApplicationAdapter {
                         if (i < chars.length - 2 && chars[i + 1] == '\u17d2') {
                             i++;
                             foot = chars[i] + "" + chars[i + 1];
-                            if (khmerFeet.containsKey(foot)) {
+                            if (blwSC2.containsKey(foot)) {
                                 if (chars[i + 1] == '\u179a') {
-                                    word.insert(word.length() - 2, khmerFeet.get(foot));
+                                    word.insert(word.length() - 2, blwSC2.get(foot));
                                 } else if (chars[i - 1] == '\u179a') {
-                                    word.append(khmerFoot.get(foot));
+                                    word.append(blwSC1.get(foot));
                                 } else {
-                                    word.append(khmerFeet.get(foot));
+                                    word.append(blwSC2.get(foot));
                                 }
                                 i++;
                             }
                         }
-                        if (i < chars.length - 1 && specialCharacter.containsKey(chars[i + 1])) {
-                            word.append(specialCharacter.get(chars[i + 1]));
+                        if (i < chars.length - 1 && blwV.containsKey(chars[i + 1])) {
+                            word.append(blwV.get(chars[i + 1]));
                             i++;
                         }
                     }
@@ -221,8 +221,8 @@ public class MyGdxGame extends ApplicationAdapter {
                 case '\u17a1':
                     word.append(chars[i]);
                     if (i < chars.length - 1) {
-                        if (specialCharacter.containsKey(chars[i + 1])) {
-                            word.append(specialCharacter.get(chars[i + 1]));
+                        if (blwV.containsKey(chars[i + 1])) {
+                            word.append(blwV.get(chars[i + 1]));
                             i++;
                         }
                     }
