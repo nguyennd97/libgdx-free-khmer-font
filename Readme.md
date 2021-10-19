@@ -2,7 +2,7 @@
 
 Using Khmer Wrapper to solve [libgdx Khmer font issue](https://github.com/libgdx/libgdx/issues/6626).
 
-- Copy font **khmerOsBattamang-64-full.fnt, khmerOsBattamang-64-full.png and KhmerWrapper** to your project
+- Copy font **khmerOsBattamang-64-full.fnt, khmerOsBattamang-64-full.png and KhmerWrapper.java** to your project
 - Use **KhmerWrapper.wrap** to wrap String before put it in **Widget**.
 
 ## Example
